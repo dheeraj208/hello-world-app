@@ -1,0 +1,50 @@
+<form #f="ngForm" (ngSubmit)="submit(f)">
+    <div class="form-group">
+        <label for="firstName">First Name</label>
+        <input required minlength="4" maxlength="10" ngModel name="firstName" id="firstName" #firstName="ngModel"
+            type="text" class="form-control" />
+        <div class="alert alert-danger" *ngIf="firstName.touched && !firstName.valid">
+            <div *ngIf="firstName.errors.required">First name is required.</div>
+            <div *ngIf="firstName.errors.minlength">First Name should be more than
+                {{firstName.errors.minlength.requiredLength}} letters</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="comment">Comment</label>
+        <textarea ngModel name="comment" id="comment" cols="30" rows="10" class="form-control"></textarea>
+    </div>
+    <div class="checkbox">
+        <label>
+            <input type="checkbox" ngModel name="isSubscribed">Subscribed to mailing list
+        </label>
+    </div>
+    <div class="form-group">
+        <label for="contactMethod">Contact Method</label>
+        <select ngModel name="contactMethod" id="contactMethod" class="form-control">
+            <option *ngFor="let contact of contactMethod" [value]="contact.id">{{contact.name}}</option>
+        </select>
+    </div>
+    <!-- Hard coded radio button -->
+    <div class="radio">
+        <label>
+            <input ngModel type="radio" name="contactMethod" value="1"> Email
+        </label>
+    </div>
+    <div class="radio">
+        <label>
+            <input ngModel type="radio" name="contactMethod" value="2"> Phone
+        </label>
+    </div>
+
+    <!-- Dynamic Radio Button -->
+    <p>Dynamic Radio Button</p>
+    <div class="radio" *ngFor="let contact of contactMethod">
+        <label>
+            <input ngModel type="radio" name="contactMethod" [value]="contact.id">
+            {{contact.name}}
+        </label>
+    </div>
+
+    <p>{{f.value | json}}</p>
+    <button class="btn btn-primary" [disabled]="!f.valid">Submit</button>
+</form>

@@ -1,0 +1,10 @@
+body{
+    padding: 20px;
+}
+
+.crop {
+    overflow: hidden;
+  }
+  div {
+    cursor: pointer;
+  }

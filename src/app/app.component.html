@@ -1,0 +1,62 @@
+<h1><b>Angular</b></h1>
+<app-author></app-author>
+<app-favorite [is-fav] = "isFavorite"  (isOutput) = "onFavoriteChange($event)"></app-favorite>
+
+<bootstrap-panel>
+    <div class="heading"><b>Heading</b></div>
+    <ng-container class="body">
+        <h2>This is body</h2>
+        <p>Some content goes here..</p>
+    </ng-container>
+</bootstrap-panel>
+
+<app-like [is-liked] = "tweet.isLiked" [like-count] = "tweet.likesCount"></app-like>
+<br><br>
+
+<div><b>Look into ang-directive.component.ts</b></div>
+<app-ang-directive></app-ang-directive>
+<br><br>
+
+<div><b>Look into custom-directive-format.directive.ts file</b></div>
+<div>
+    <label for="">Format Ph Number: </label>
+    <input type="text" appCustomDirectiveFormat ormat="uppercase">
+</div>    
+<br><br>
+
+<app-zippy title="Shipping Details">
+    Shipping Details Content
+</app-zippy>
+
+<br><br>
+<div><b>look in app.component</b></div>
+<input type="text" id="fname" [(ngModel)] = "textValue" (onblur)="onBlurTextBox()"/>
+<span> {{textValue | uppercase}} </span>
+<br><br>
+
+<div><b>contact-form component  - Template Driven Form</b></div>
+<app-contact-form></app-contact-form>
+<br><br>
+
+<div><b>Exercise: Course Form</b></div>
+<app-course-form></app-course-form>
+<br><br>
+
+<div><b>Signup Form - Reactive Forms</b></div>
+<signup-form></signup-form>
+<br><br>
+
+<div><b>Password Change Form - Reactive Forms</b></div>
+<app-change-password></app-change-password>
+<br><br>
+
+<div><b>Form Array - Reactive Forms</b></div>
+<app-form-array></app-form-array>
+<br><br>
+
+<div><b>HTTP Request - http/get-data component + Error Handling</b></div>
+<app-get-data></app-get-data>
+
+<div><b>Routing</b></div>
+<app-navbar></app-navbar>
+<router-outlet></router-outlet>
