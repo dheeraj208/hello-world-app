@@ -1,0 +1,16 @@
+<form [formGroup]="form" >
+  <div class="form-group">
+    <label for="ahn">Alberta Health Number</label>
+    <!-- formControlName is directive and value assigned is key of FormControl object -->
+    <input
+        formControlName="ahn"
+        id="ahn"
+        type="text"
+        class="form-control"
+        (blur)="validate()">
+        <div class="alert alert-danger" *ngIf="ahn.touched && ahn.invalid">
+          <div *ngIf="ahn.errors.required">AHN is required</div>
+          <div *ngIf="ahn.errors.validateAHN">AHN is not valid</div>
+         </div>
+  </div>
+</form>

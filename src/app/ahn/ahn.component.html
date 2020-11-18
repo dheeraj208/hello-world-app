@@ -1,0 +1,8 @@
+<div class="form-group">
+  <label for="ahn">Alberta Health Number (ahn)</label>
+  <input required ngModel name="ahn" id="ahn" #ahn="ngModel" type="text" validateAHN/>
+  <div *ngIf="ahn.touched && !ahn.valid">
+    <div class= "error" *ngIf="ahn.errors.required">AHN is required.</div>
+    <div class= "error" *ngIf="ahn.errors.validateAHN">AHN is not valid.</div>
+  </div>
+</div>

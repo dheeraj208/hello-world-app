@@ -31,6 +31,9 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { HomeComponent } from './home/home.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { TestComponent } from './test/test.component';
+import { AlbertaHealthNumberComponent } from './alberta-health-number/alberta-health-number.component';
+import { AhnComponent } from './ahn/ahn.component';
+import { AHNValidatorDirective } from './ahn/ahn-validator.directive'
 
 @NgModule({
   declarations: [
@@ -55,7 +58,10 @@ import { TestComponent } from './test/test.component';
     HomeComponent,
     NotFoundComponent,
     GithubProfileComponent,
-    TestComponent
+    TestComponent,
+    AlbertaHealthNumberComponent,
+    AhnComponent,
+    AHNValidatorDirective
     // FontAwesomeModule
   ],
   imports: [
